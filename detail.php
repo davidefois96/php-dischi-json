@@ -21,18 +21,67 @@ $array_discs= $list[$_GET['index']]
   <title>php-dischi-json</title>
   
 </head>
-<body class="text-center p-4 bg-secondary">
+<body class="text-center bg-secondary">
 
-  <h1>Dettagli</h1>
+  <header class="d-flex justify-content-between align-items-center  p-3  bg-dark ">
 
-  <h5><?php echo $array_discs['title']  ?></h5>
-  <h6><?php echo $array_discs['author']  ?></h6>
-  <h6><?php echo $array_discs['year']  ?></h6>
-  <p><?php echo $array_discs['genre']  ?></p>
+    <div class="d-flex text-secondary  ">
 
- <a href="index.html" class="btn btn-primary ">Home</a>
+      <img class="me-2 " src="img/Logo.png" alt="boolify">
+
+
+
+
+      <h1>Boolify</h1>
+
+
+    </div>
+
+
+    <a href="index.html" class="btn btn-secondary text-dark " >Torna alla Home</a>
+
+
+
+  </header>
+
+  <main class="d-flex justify-content-around py-5">
+
+    <div>
+
+     <h1 class="mb-5">Copertina:</h1>
+
+     <img src="<?php echo $array_discs['poster'] ?>" alt="<?php echo $array_discs['title']  ?>">
+
+
+    </div>
+
+
+    <div>
+
+
+      <h1 class="mb-5">Dettagli:</h1>
+
+
+      <h2 >Titolo:</h2>
+      <h4 class="mb-5"><?php echo $array_discs['title']  ?></h4>
+      <h2>Autore:</h2>
+      <h4 class="mb-5"><?php echo $array_discs['author']  ?></h4>
+      <h2>Anno:</h2>
+      <h4 class="mb-5"><?php echo $array_discs['year']  ?></h4>
+      <h2>Genere:</h2>
+      <h4><?php echo $array_discs['genre']  ?></h4>
+
+
+
+
+    </div>
+
+
+
+
+  </main>
 
   
-  
+ 
 </body>
 </html>

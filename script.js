@@ -9,17 +9,18 @@ createApp({
 
       disk:{
 
-      title:'',
-      author:'',
-      year:'',
-      poster:'',
-      genre:''
+        title:'',
+        author:'',
+        year:'',
+        poster:'',
+        genre:''
 
 
 
-      }
-      
-      
+      },
+
+      showForm: false
+
 
     }
   },
@@ -49,6 +50,29 @@ createApp({
 
         })
 
+      this.toggleForm()  
+
+    },
+    removeDisk(index){
+
+      const data = new FormData();
+      data.append('indexToDelete',index);
+      
+
+      axios.post(this.apiUrl,data)
+        .then(res => {
+          
+          this.albums = res.data; 
+
+        })
+
+    },
+    toggleHeart(index) {
+      this.albums[index].active = !this.albums[index].active;
+    },
+    toggleForm() {
+      
+      this.showForm = !this.showForm;
     }
   },
   mounted() {
